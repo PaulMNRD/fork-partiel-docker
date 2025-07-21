@@ -1,6 +1,6 @@
 services:
   myapp:
-    image: ghcr.io/PaulMNRD/fork-partiel-docker/myapp:1
+    image: ghcr.io/paulmnrd/fork-partiel-docker/myapp:1
     container_name: myapp
     restart: unless-stopped
     ports:
