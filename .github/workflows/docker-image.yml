@@ -26,3 +26,9 @@ jobs:
 
       - name: Push Docker image
         run: docker push ghcr.io/${{ github.repository }}/myapp:1
+
+      - name: Run deployement test workflow
+        uses: peter-evans/workflow-dispatch@v1
+        with:
+          workflow: second-compose.yml
+          ref: main
