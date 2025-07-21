@@ -20,11 +20,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Pull myapp image
-        run: docker pull ghcr.io/${{ github.repository_owner }}/myapp:1
-
-      - name: Override image in docker-compose and run tests
+          
+      - name: Run images in docker-compose
         run: |
           docker-compose up -d
+          sleep 5
+          curl http://localhost:8080/books
           docker-compose down
